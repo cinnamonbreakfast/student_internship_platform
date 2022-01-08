@@ -1,0 +1,293 @@
+/login 
+	POST
+		body:
+			{
+				"email": str,
+				"pass": str
+			}
+		response:
+			status:
+				200:
+					{
+						"token": jwttoken,
+						"user_id": string(uuid),
+						"name": string,
+						"email": string,
+						"type": string
+					}
+				401:
+					description: wrong user/pass
+					no body
+				400:
+					description: smth bad
+					body: 
+						{"error": str}
+/register
+	POST
+		body:
+			{
+				"email": str, 
+				"pass": str,
+				“type” : str  // “student” or “recruiter”
+			}
+		response:
+			status:
+				200:
+					description: successful
+					body:
+						{
+							"user_id": string(uuid),
+							"name": string,
+							"email": string,
+							"type": string
+						}
+				400:
+					description: bad something
+					body:
+						{"error": str}
+					
+/user/profile
+	GET
+		description: get own user profile
+		body:
+			- no body, only jwttoken
+		response:
+			status:
+				200:
+					body:
+						{
+							"user_id": string
+							"email" : str, 
+							"name" : str, 
+							"password" : str,
+							“type” : str  
+							"faculty" : str,
+							"interests" : str
+						}
+				400:
+					description: smth bad 
+					body:
+						{"error": str}
+						
+/user/profile
+	PUT
+		description: update user profile
+		body:
+			{
+				"email" : str, 
+				"name" : str, // can be null, will remain the same if so
+				"password" : str, // can be null, will remain the same if so
+				“type” : str  // can be null, will remain the same if so  <student/recruiter>
+				"faculty" : str, // can be null, will remain the same if so
+				"interests" : str // can be null, will remain the same if so
+				<HELP HERE, ce alte field-uri?>  // can be null, will remain the same if so
+			}
+		response:
+			status:
+				204:
+					body:
+						{
+								"user_id": string
+								"email" : str, 
+								"name" : str, 
+								"password" : str,
+								“type” : str  
+								"faculty" : str,
+								"interests" : str
+						}
+				400:
+					description: smth bad 
+					body:
+						{"error": str}
+
+/listings/new 
+	POST
+		description: add a new listing 
+		body:
+			{                                              // corresponds to LISTING entity
+				"title" : str,
+				"company" : str,
+				"description" : str,
+				"experience" : str, 
+				"salary" : str, 
+				"remote" : str,
+				"keywords" : list(str)   // json list 
+				"datelastregister" : str,
+				"duration" : str,
+				"endingdate" : str
+			}
+		response:
+			status:
+				200:
+					body:
+						{                                          
+							"id" : string(uuid),
+							"title" : str,
+							"company" : str,
+							"description" : str,
+							"experience" : str, 
+							"salary" : str, 
+							"remote" : str,
+							"keywords" : list(str) 
+							"datelastregister" : str,
+							"duration" : str,
+							"endingdate" : str
+						}
+				400:
+					description: smth bad 
+					body:
+						{"error": str}
+
+/listings
+	GET
+		description: get all listings
+		body:
+			no body 
+		response:
+			status:
+				200:
+					list(LISTING)
+				400:
+					description: smth bad 
+					body:
+						{"error": str}
+					
+
+/listings/filtered
+	POST 
+		description: get all listings filtered by keywords 
+		body:
+			{
+				"title" : list(str)     // json list, can be null
+				"keywords": list(str),  // json list, can be null
+				"company" : list(str),  // json list, can be null
+				"salary" : list(str),   // 2 string acting as range, can be null
+				"remote" : str,           // bool, yes or no, can be null
+				"experience" : list(str), // 2 string acting as range, in years, can be null
+				"duration" : list(str),   // 2 string acting as range, in months, can be null
+				"endingdate" : str,        // last ending date, will also show all that end before, can be null
+				"datelastregister" : str,  // last register date, will also show all that end before, can be null
+			}
+			
+		response:
+			status:
+				200:
+					list(LISTING)
+				400:
+					description: smth bad
+					body:
+						{"error": str}
+						
+/listings/search
+	POST
+		description: search user input items in listing description
+		body:
+			{ 
+				"searchfor": list(str)  // json list
+			}
+		response:
+			status:
+				200:
+					list(LISTING)  // all that contain the "searchfor" items in LISTING.description
+				400:
+					description: smth bad
+					body:
+						{"error": str}
+
+
+/listing/{id}
+	GET
+		description: get listing information
+		body:
+			no body
+		response:
+			status:
+				200:
+					LISTING 
+				400:
+					description: smth bad
+					body:
+						{“error” : str}
+						
+/listing/{id}/apply
+	POST
+		description: apply to internship
+		body:
+			no body (but only if we use JWT)
+		response:
+			status:
+				200:
+					body:
+						{
+							"public_id" : str(uuid), 
+							"email" : str,
+							"listing_id" : str,
+							"status" : str,
+							"motivation" : str,
+						}
+				400:
+					description: smth bad
+					body:
+						{“error” : str}
+						
+/listing/{id}/applications
+	GET
+		description: show all applications for a listing, must be type recruiter
+		body:
+			no body 
+		response:
+			status:
+				200:
+					list( 
+						{
+							"public_id" : str(uuid), 
+							"email" : str,
+							"listing_id" : str,
+							"status" : str,
+							"motivation" : str,
+						} 	
+					) 
+					
+/listing/{id}/applications/{application_id}
+	POST
+		Description: accept or reject an application
+		Body: 
+			{
+				“status”: str, // (<accept/reject>)
+				“motivation” : str
+			}
+		Response:
+			Status:
+				200:
+					{
+						"public_id" : str(uuid), 
+						"email" : str,
+						"listing_id" : str,
+						"status" : str,
+						"motivation" : str,
+					}
+				400:
+					Description: smth bad
+					Body:
+						{“error” : str}
+
+
+/listings/mine
+	GET
+		Description: show all internship applied
+		Body:
+			No body (but only with JWT)
+		Response:
+			Status:
+				200:
+					list(
+						LISTING + 
+						{“status”: str,   //  <accepted/rejected/pending> 
+						 "motivation" : str}
+					)
+				400:
+					Description: smth bad
+					Body:
+						{“error” : str}	
+
+
