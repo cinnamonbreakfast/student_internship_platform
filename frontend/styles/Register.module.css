@@ -7,20 +7,20 @@
     justify-content: center;
 }
 
-.login_form {
-    width: 300px;
+.register_form {
+    width: 360px;
 }
 
-.login_form input {
+.register_form input {
     margin-bottom: 10px;
 }
-.login_form input:last-child {
+.register_form input:last-child {
     margin-bottom: 0px;
 }
 
-.login_form button {
+.register_form button {
     margin-top: 5px;
-    margin-left: 100px;
+    margin-left: 130px;
     margin-bottom: 5px;
 }
 
