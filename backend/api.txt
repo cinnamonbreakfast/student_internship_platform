@@ -108,8 +108,8 @@
 				"title" : str,
 				"company" : str,
 				"description" : str,
-				"experience" : str, 
-				"salary" : str, 
+				"experience" : list(str),      // json list of 2 strings, representing range
+				"salary" : list(str),          // json list of 2 strings, representing range
 				"remote" : str,
 				"keywords" : list(str)   // json list 
 				"datelastregister" : str,
@@ -125,8 +125,8 @@
 							"title" : str,
 							"company" : str,
 							"description" : str,
-							"experience" : str, 
-							"salary" : str, 
+							"experience" : list(str), 
+							"salary" : list(str), 
 							"remote" : str,
 							"keywords" : list(str) 
 							"datelastregister" : str,

@@ -6,7 +6,7 @@ import logging
 import jwt
 from datetime import datetime, timedelta
 from werkzeug.security import generate_password_hash, check_password_hash
-
+import json
 from domain.User import get_user_model
 from domain.Listing import get_listing_model
 from domain.Application import get_application_model
@@ -31,6 +31,8 @@ db = setup_db(app, 'mamacatdesecuresuntembabaieti', 'sqlite:///DatabaseRE.db', T
 User = get_user_model(db)
 Listing = get_listing_model(db)
 ApplicationModel = get_application_model(db)
+
+db.create_all()
 
 token_required = get_token_decorator(app, User)
 
@@ -154,11 +156,21 @@ def update_user_profile(current_user):
 
         user = User.query.filter_by(email=current_user.email).first()
 
-        user.update(name=retrieve_if_not_empty(data['name']),
-                    type=retrieve_if_not_empty(data['type']),
-                    faculty=retrieve_if_not_empty(data['faculty']),
-                    interests=retrieve_if_not_empty(data['interests'])
+        user_fields = {}
+        for field in ['name', 'type', 'faculty', 'interests']:
+            try:
+                app.logger.info("UPDATE_USER_PROFILE field {} value {}".format(field, data[field]))
+                user_fields[field] = data[field]
+            except:
+                user_fields[field] = None
+
+        app.logger.info("UPDATE_USER_PROFILE updating user with {}".format(user_fields))
+        user.update(name=user_fields['name'],
+                    type=user_fields['type'],
+                    faculty=user_fields['faculty'],
+                    interests=user_fields['interests']
                     )
+        db.session.commit()
 
         return make_response(jsonify(name=user.name,
                                      email=user.email,
@@ -201,6 +213,7 @@ def add_listing(current_user):
             data['company'],
             data['description'],
             data['salary'],
+            data['experience'],
             data['remote'],
             data['keywords'],
             data['datelastregister'],
@@ -215,6 +228,7 @@ def add_listing(current_user):
                                      company=listing.company,
                                      description=listing.description,
                                      salary=listing.salary,
+                                     experience=listing.experience,
                                      remote=listing.remote,
                                      keywords=listing.keywords,
                                      datelastregister=listing.datelastregister,
@@ -243,6 +257,7 @@ def get_all_listings(current_user):
                     "company": listing.company,
                     "description": listing.description,
                     "salary": listing.salary,
+                    "experience": listing.experience,
                     "remote": listing.remote,
                     "keywords": listing.keywords,
                     "datelastregister": listing.datelastregister,
@@ -270,6 +285,7 @@ def get_listing_info(current_user, listing_id):
                                      company=listing.company,
                                      description=listing.description,
                                      salary=listing.salary,
+                                     experience=listing.experience,
                                      remote=listing.remote,
                                      keywords=listing.keywords,
                                      datelastregister=listing.datelastregister,
@@ -304,6 +320,7 @@ def search_in_listings(current_user):
                         "company": listing.company,
                         "description": listing.description,
                         "salary": listing.salary,
+                        "experience": listing.experience,
                         "remote": listing.remote,
                         "keywords": listing.keywords,
                         "datelastregister": listing.datelastregister,
@@ -331,34 +348,60 @@ def filter_listings(current_user):
         output = []
 
         for item in ["title", "keywords", "company", "remote"]:
-            if retrieve_if_not_empty(data[item]):
-                output_listings = filter_by(output_listings, item, data[item])
+            try:
+                item_value = data[item]
+                if item_value is not None and item_value != "":
+                    output_listings = filter_by(output_listings, item, item_value)
+                app.logger.info("output after {} filtering {}".format(item, output_listings))
+            except:
+                continue
 
         def filter_range(object_value, values, is_date=False):
+            not_int = False
             point1, point2 = values
             if is_date:
                 point1 = datetime.fromisoformat(point1)
                 point2 = datetime.fromisoformat(point2)
+                not_int = True
+            try:
+                object_value = json.loads(object_value)
+            except:
+                pass
+
+            if not not_int:
+                point1, point2 = int(point1), int(point2)
             if isinstance(object_value, list):
                 object_point1, object_point2 = object_value
                 if is_date:
                     object_point1 = datetime.fromisoformat(object_point1)
                     object_point2 = datetime.fromisoformat(object_point2)
+                else:
+                    object_point1, object_point2 = int(object_point1), int(object_point2)
 
-                if point1 >= object_point1 and point2 <= object_point2:
+                if point1 >= object_point1 and point2 >= object_point2:
                     return True
             else:
+                if not not_int:
+                    object_value = int(object_value)
                 if point1 <= object_value <= point2:
                     return True
             return False
 
         for item in ['salary', 'duration', 'experience']:
-            if retrieve_if_not_empty(data[item]):
-                output_listings = filter_by(output_listings, item, data[item], filter_range, is_date=False)
+            try:
+                item_value = data[item]
+                if item_value is not None and item_value != "":
+                    output_listings = filter_by(output_listings, item, item_value, filter_range, is_date=False)
+            except:
+                continue
 
         for item in ['endingdate', 'datelastregister']:
-            if retrieve_if_not_empty(data[item]):
-                output_listings = filter_by(output_listings, item, data[item], filter_range, is_date=True)
+            try:
+                item_value = data[item]
+                if item_value is not None and item_value != "":
+                    output_listings = filter_by(output_listings, item, item_value, filter_range, is_date=True)
+            except:
+                continue
 
         for listing in output_listings:
             output.append(
@@ -368,6 +411,7 @@ def filter_listings(current_user):
                     "company": listing.company,
                     "description": listing.description,
                     "salary": listing.salary,
+                    "experience": listing.experience,
                     "remote": listing.remote,
                     "keywords": listing.keywords,
                     "datelastregister": listing.datelastregister,
@@ -420,17 +464,20 @@ def get_all_applications_for_listing(current_user, listing_id):
             return make_response(jsonify(error="Only recruiters can see the applications"),
                                  400)
 
-        applications = ApplicationModel.query().filter_by(listing_id=listing_id).all()
+        app.logger.info("WHAT {}".format(type(listing_id)))
+        applications = ApplicationModel.query.filter_by(listing_id=listing_id).all()
+        app.logger.info("DA {}".format(applications))
         output = []
 
         for application in applications:
-            output.append(jsonify(application_id=application.public_id,
-                                  email=application.email,
-                                  listing_id=application.listing_id,
-                                  status=application.status,
-                                  motivation=application.motivation
-                                  )
-                          )
+            output.append({"application_id" : application.public_id,
+                                  "email" :application.email,
+                                  "listing_id":application.listing_id,
+                                  "status":application.status,
+                                  "motivation":application.motivation
+                          }
+                  )
+
 
         return make_response(jsonify(output),
                              200)
@@ -447,17 +494,17 @@ def get_all_applications_for_listing(current_user, listing_id):
 @token_required
 def get_my_applications(current_user):
     try:
-        applications = ApplicationModel.query().filter_by(email=current_user.email).all()
+        applications = ApplicationModel.query.filter_by(email=current_user.email).all()
         output = []
 
         for application in applications:
-            output.append(jsonify(application_id=application.public_id,
-                                  email=application.email,
-                                  listing_id=application.listing_id,
-                                  status=application.status,
-                                  motivation=application.motivation
-                                  )
-                          )
+            output.append({"application_id" : application.public_id,
+                                  "email" :application.email,
+                                  "listing_id":application.listing_id,
+                                  "status":application.status,
+                                  "motivation":application.motivation
+                          }
+                  )
 
         return make_response(jsonify(output),
                              200)
@@ -476,11 +523,12 @@ def accept_reject_application(current_user, listing_id, application_id):
     try:
         data = request.json
 
-        application = ApplicationModel.query().filter_by(application_id=application_id).first()
+        application = ApplicationModel.query.filter_by(public_id=application_id).first()
 
         application.update(status=retrieve_if_not_empty(data['status']),
                            motivation=retrieve_if_not_empty(data['motivation'])
                            )
+        db.session.commit()
 
         return make_response(jsonify(application_id=application.public_id,
                                      email=application.email,
@@ -503,5 +551,4 @@ def accept_reject_application(current_user, listing_id, application_id):
 
 
 if __name__ == "__main__":
-    db.create_all()
     app.run(port=50321, debug=True)

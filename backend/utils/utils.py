@@ -19,9 +19,16 @@ def filter_by(objects, field, values, special_func=None, is_date=False):
             if object_field is None or object_field == "":
                 continue
             if not special_func:
-                if any(match in object_field for match in values):
+                if not isinstance(values, list):
+                    values = [values.lower()]
+                else:
+                    values = [x.lower() for x in values]
+                if any(match in object_field.lower() for match in values):
                     filtered.append(the_object)
             else:
-                if special_func is not None and special_func(object_field, values, is_date):
-                    filtered.append(the_object)
+                try:
+                    if special_func is not None and special_func(object_field, values, is_date):
+                        filtered.append(the_object)
+                except:
+                    continue
     return filtered
