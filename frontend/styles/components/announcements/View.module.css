@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    padding: 0px 5%;
+}
+
+.section {
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.section:last-child {
+    margin-bottom: 0px;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.section .apply_form input {
+    margin-top: 10px;
+    margin-right: 144px;
+    margin-bottom: 5px;
+}
+
+.uploader {
+    margin-top: 25px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
