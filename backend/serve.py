@@ -77,39 +77,45 @@ def login():
     except Exception as exc:
         app.logger.error("Unhandled exception: {}".format(str(exc)))
         return make_response(
-            "Something unexpected happened",
+            jsonify(error="Something unexpected happened"),
             400
         )
 
 
 @app.route('/register', methods=['POST'])
 def register():
-    data = request.json
+    try:
+        data = request.json
 
-    email, password = data.get('email'), data.get('password')
-    type = data.get("type") or "student"
+        email, password = data.get('email'), data.get('password')
+        type = data.get("type") or "student"
 
-    user = User.query \
-        .filter_by(email=email) \
-        .first()
-    if not user:
-        user = User(
-            email=email,
-            password=generate_password_hash(password),
-            type=type
+        user = User.query \
+            .filter_by(email=email) \
+            .first()
+        if not user:
+            user = User(
+                email=email,
+                password=generate_password_hash(password),
+                type=type
+            )
+            db.session.add(user)
+            db.session.commit()
+
+            return make_response(jsonify(name=user.name,
+                                         email=user.email,
+                                         user_id=user.public_id,
+                                         type=user.type),
+                                 200)
+        else:
+            return make_response(jsonify(error='User already exists. Please Log in.'),
+                                 400)
+    except Exception as exc:
+        app.logger.error("Unhandled exception at register: {}".format(str(exc)))
+        return make_response(
+            jsonify(error="Something unexpected happened"),
+            400
         )
-        db.session.add(user)
-        db.session.commit()
-
-        return make_response(jsonify(name=user.name,
-                                     email=user.email,
-                                     user_id=user.public_id,
-                                     type=user.type),
-                             200)
-    else:
-        return make_response('User already exists. Please Log in.',
-                             400)
-
 
 @app.route("/user/profile", methods=["GET"])
 @token_required
@@ -128,7 +134,7 @@ def get_user_profile(current_user):
     except Exception as exc:
         app.logger.error("Error when getting user profile.\n{}".format(str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -141,7 +147,7 @@ def update_user_profile(current_user):
 
         if data['email'] != current_user.email:
             return make_response(
-                "Can't update someone else's profile.",
+                jsonify(error="Can't update someone else's profile."),
                 400
             )
 
@@ -165,7 +171,7 @@ def update_user_profile(current_user):
     except Exception as exc:
         app.logger.error("Error when updating user profile.\n{}".format(str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -177,7 +183,7 @@ def add_listing(current_user):
         if current_user.type != "recruiter":
             app.logger.info("Add listing attempted by non-recruiter")
             return make_response(
-                "Not enough permissions to add listings, must be a recruiter",
+                jsonify(error="Not enough permissions to add listings, must be a recruiter"),
                 400
             )
 
@@ -185,7 +191,7 @@ def add_listing(current_user):
         if not data['title'] or not data['company'] or not data['description']:
             app.logger.info("Tried new listing with too little information:\n{}".format(data))
             return make_response(
-                "Not enough information for new listing",
+                jsonify(error="Not enough information for new listing"),
                 400
             )
 
@@ -217,7 +223,7 @@ def add_listing(current_user):
     except Exception as exc:
         app.logger.error("Error when adding new listing.\n{}".format(str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -248,7 +254,7 @@ def get_all_listings(current_user):
     except Exception as exc:
         app.logger.error("Error when getting all listings.\n{}".format(str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -272,7 +278,7 @@ def get_listing_info(current_user, listing_id):
     except Exception as exc:
         app.logger.error("Error when getting listing {}.\n{}".format(listing_id, str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -309,7 +315,7 @@ def search_in_listings(current_user):
     except Exception as exc:
         app.logger.error("Error when searching listing.\n{}".format(str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -374,7 +380,7 @@ def filter_listings(current_user):
     except Exception as exc:
         app.logger.error("Error when getting listing.\n{}".format(str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -400,7 +406,7 @@ def apply_for_listing(current_user, listing_id):
         app.logger.error(
             "Error when {} applying to listing {}.\n{}".format(current_user.public_id, listing_id, str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -410,7 +416,7 @@ def apply_for_listing(current_user, listing_id):
 def get_all_applications_for_listing(current_user, listing_id):
     try:
         if current_user.type != "recruiter":
-            return make_response("Only recruiters can see the applications",
+            return make_response(jsonify(error="Only recruiters can see the applications"),
                                  400)
 
         applications = ApplicationModel.query().filter_by(listing_id=listing_id).all()
@@ -431,7 +437,7 @@ def get_all_applications_for_listing(current_user, listing_id):
     except Exception as exc:
         app.logger.error("Error when getting all applications for listing {}.\n{}".format(listing_id, str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -458,7 +464,7 @@ def get_my_applications(current_user):
     except Exception as exc:
         app.logger.error("Error when getting my applications.\n{}".format(str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 
@@ -490,7 +496,7 @@ def accept_reject_application(current_user, listing_id, application_id):
                                                                                                current_user.public_id,
                                                                                                str(exc)))
         return make_response(
-            "Something unexpected happened. Try again later!",
+            jsonify(error="Something unexpected happened. Try again later!"),
             400
         )
 

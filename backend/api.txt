@@ -3,7 +3,7 @@
 		body:
 			{
 				"email": str,
-				"pass": str
+				"password": str
 			}
 		response:
 			status:
@@ -27,7 +27,7 @@
 		body:
 			{
 				"email": str, 
-				"pass": str,
+				"password": str,
 				“type” : str  // “student” or “recruiter”
 			}
 		response:
