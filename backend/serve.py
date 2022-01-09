@@ -1,5 +1,5 @@
 import uuid
-
+from flask_cors import CORS
 from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 import logging
@@ -22,6 +22,7 @@ def setup_db(app, secret_key, uri, track_modifs):
 
 
 app = Flask(__name__)
+CORS(app)
 
 logging.basicConfig(filename='server.log', level=logging.DEBUG,
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
