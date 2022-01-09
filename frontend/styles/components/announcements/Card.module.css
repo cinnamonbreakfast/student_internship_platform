@@ -1,0 +1,31 @@
+.card {
+    width: 23%;
+    border-radius: 15px;
+    background-color: #333333;
+    padding: 20px;
+    margin: 0px 15px 15px 0px;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 20px;
+}
+
+.card p {
+    color: #cbcbcb;
+}
+
+.card ul.perks {
+    margin-top: 10px;
+    list-style-type: none;
+    padding: 0px;
+    color: #fff;
+}
+
+.card .controlls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+}

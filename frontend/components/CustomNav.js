@@ -1,19 +1,29 @@
-import {Nav, Navbar} from 'rsuite';
+import { Nav, Navbar } from 'rsuite';
 import styles from '../styles/Nav.module.css';
+import { useRouter } from 'next/router';
 
+const CustomNav = ({ active, ...props }) => {
+    const router = useRouter();
 
-const CustomNav = ({ active, onSelect, ...props }) => {
+    const onSelect = (data) => {
+        console.log(data);
+        router.push({
+            pathname: `/${data}`,
+        });
+    };
+
     return (
-        <Nav {...props} activeKey={active} onSelect={onSelect} style={styles}>
-        <Nav.Item 
-            eventKey="internships" 
-            >Internships</Nav.Item>
-        <Nav.Item 
-            eventKey="applications"
-            >Applications</Nav.Item>
-        </Nav>
+        <Navbar {...props} style={styles}>
+            <Nav.Item onSelect={onSelect} eventKey='announcements'>
+                Internships
+            </Nav.Item>
+
+            <Nav pullRight onSelect={onSelect}>
+                <Nav.Item eventKey='login'>Login</Nav.Item>
+                <Nav.Item eventKey='register'>Register</Nav.Item>
+            </Nav>
+        </Navbar>
     );
 };
 
 export default CustomNav;
-
