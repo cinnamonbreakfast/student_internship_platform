@@ -1,5 +1,4 @@
 import { Nav, Navbar } from 'rsuite';
-import styles from '../../styles/Nav.module.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
