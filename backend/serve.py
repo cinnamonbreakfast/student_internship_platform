@@ -22,7 +22,7 @@ def setup_db(app, secret_key, uri, track_modifs):
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 logging.basicConfig(filename='server.log', level=logging.DEBUG,
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
