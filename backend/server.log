@@ -1,0 +1,255 @@
+2022-01-10 10:44:27,247 ERROR serve Thread-9 : Error when adding new listing.
+'title'
+2022-01-10 10:44:27,247 INFO werkzeug Thread-9 : 127.0.0.1 - - [10/Jan/2022 10:44:27] "[31m[1mPOST /listings/new HTTP/1.1[0m" 400 -
+2022-01-10 10:44:42,219 ERROR serve Thread-10 : Error when adding new listing.
+'title'
+2022-01-10 10:44:42,219 INFO werkzeug Thread-10 : 127.0.0.1 - - [10/Jan/2022 10:44:42] "[31m[1mPOST /listings/new HTTP/1.1[0m" 400 -
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field name value Andrei Candet
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field type value recruiter
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field faculty value Babes
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field interests value a, b, c
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candet', 'type': 'recruiter', 'faculty': 'Babes', 'interests': 'a, b, c'}
+2022-01-10 10:45:01,000 INFO werkzeug Thread-11 : 127.0.0.1 - - [10/Jan/2022 10:45:01] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 11:15:45,807 INFO werkzeug Thread-12 : 127.0.0.1 - - [10/Jan/2022 11:15:45] "[31m[1mPUT /user/profile HTTP/1.1[0m" 405 -
+2022-01-10 11:44:44,704 INFO werkzeug Thread-13 : 127.0.0.1 - - [10/Jan/2022 11:44:44] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:44:44,944 INFO werkzeug Thread-14 : 127.0.0.1 - - [10/Jan/2022 11:44:44] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:44:57,568 INFO werkzeug Thread-15 : 127.0.0.1 - - [10/Jan/2022 11:44:57] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:44:57,872 INFO werkzeug Thread-16 : 127.0.0.1 - - [10/Jan/2022 11:44:57] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:45:09,791 INFO werkzeug Thread-17 : 127.0.0.1 - - [10/Jan/2022 11:45:09] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:45:10,109 INFO werkzeug Thread-18 : 127.0.0.1 - - [10/Jan/2022 11:45:10] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:46:44,758 INFO werkzeug Thread-20 : 127.0.0.1 - - [10/Jan/2022 11:46:44] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:46:45,022 INFO serve Thread-21 : Exception when decoding token Signature has expired
+2022-01-10 11:46:45,022 INFO werkzeug Thread-21 : 127.0.0.1 - - [10/Jan/2022 11:46:45] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:46:59,204 INFO werkzeug Thread-22 : 127.0.0.1 - - [10/Jan/2022 11:46:59] "OPTIONS /login HTTP/1.1" 200 -
+2022-01-10 11:46:59,722 INFO werkzeug Thread-23 : 127.0.0.1 - - [10/Jan/2022 11:46:59] "POST /login HTTP/1.1" 200 -
+2022-01-10 11:47:08,803 INFO werkzeug Thread-24 : 127.0.0.1 - - [10/Jan/2022 11:47:08] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:47:09,113 ERROR serve Thread-25 : Error when updating user profile.
+'email'
+2022-01-10 11:47:09,114 INFO werkzeug Thread-25 : 127.0.0.1 - - [10/Jan/2022 11:47:09] "[31m[1mPOST /user/profile HTTP/1.1[0m" 400 -
+2022-01-10 11:48:24,655 INFO werkzeug Thread-27 : 127.0.0.1 - - [10/Jan/2022 11:48:24] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:48:24,921 ERROR serve Thread-28 : Error when updating user profile.
+'email'
+2022-01-10 11:48:24,922 INFO werkzeug Thread-28 : 127.0.0.1 - - [10/Jan/2022 11:48:24] "[31m[1mPOST /user/profile HTTP/1.1[0m" 400 -
+2022-01-10 11:48:42,356 INFO werkzeug Thread-29 : 127.0.0.1 - - [10/Jan/2022 11:48:42] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE field name value Andrei Candetdad
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE field faculty value dasdadda
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE field interests value 
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candetdad', 'type': None, 'faculty': 'dasdadda', 'interests': ''}
+2022-01-10 11:48:42,790 INFO werkzeug Thread-30 : 127.0.0.1 - - [10/Jan/2022 11:48:42] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 11:48:51,332 INFO werkzeug Thread-31 : 127.0.0.1 - - [10/Jan/2022 11:48:51] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE field name value Andrei Candetdad
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE field faculty value dasdadda
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE field interests value 
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candetdad', 'type': None, 'faculty': 'dasdadda', 'interests': ''}
+2022-01-10 11:48:51,647 INFO werkzeug Thread-32 : 127.0.0.1 - - [10/Jan/2022 11:48:51] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 11:59:14,574 INFO werkzeug Thread-34 : 127.0.0.1 - - [10/Jan/2022 11:59:14] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:59:14,832 INFO werkzeug Thread-35 : 127.0.0.1 - - [10/Jan/2022 11:59:14] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:00:36,286 INFO werkzeug Thread-37 : 127.0.0.1 - - [10/Jan/2022 12:00:36] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:00:36,536 INFO serve Thread-38 : UPDATE_USER_PROFILE field name value Andrei Candetdad
+2022-01-10 12:00:36,536 INFO serve Thread-38 : UPDATE_USER_PROFILE field faculty value dasdadda
+2022-01-10 12:00:36,536 INFO serve Thread-38 : UPDATE_USER_PROFILE field interests value java, python, react
+2022-01-10 12:00:36,536 INFO serve Thread-38 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candetdad', 'type': None, 'faculty': 'dasdadda', 'interests': 'java, python, react'}
+2022-01-10 12:00:36,756 INFO werkzeug Thread-38 : 127.0.0.1 - - [10/Jan/2022 12:00:36] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 12:00:41,428 INFO werkzeug Thread-40 : 127.0.0.1 - - [10/Jan/2022 12:00:41] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:01:12,423 INFO werkzeug Thread-42 : 127.0.0.1 - - [10/Jan/2022 12:01:12] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:01:12,681 INFO werkzeug Thread-43 : 127.0.0.1 - - [10/Jan/2022 12:01:12] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:01:33,876 INFO werkzeug Thread-44 : 127.0.0.1 - - [10/Jan/2022 12:01:33] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:01:34,184 INFO serve Thread-45 : UPDATE_USER_PROFILE field name value Andrei Candetdad
+2022-01-10 12:01:34,184 INFO serve Thread-45 : UPDATE_USER_PROFILE field faculty value Facultatea de Matematica si Informatica | Software Engineering
+2022-01-10 12:01:34,184 INFO serve Thread-45 : UPDATE_USER_PROFILE field interests value java, python, react
+2022-01-10 12:01:34,185 INFO serve Thread-45 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candetdad', 'type': None, 'faculty': 'Facultatea de Matematica si Informatica | Software Engineering', 'interests': 'java, python, react'}
+2022-01-10 12:01:34,418 INFO werkzeug Thread-45 : 127.0.0.1 - - [10/Jan/2022 12:01:34] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 12:01:38,311 INFO serve Thread-46 : UPDATE_USER_PROFILE field name value Andrei Candet
+2022-01-10 12:01:38,311 INFO serve Thread-46 : UPDATE_USER_PROFILE field faculty value Facultatea de Matematica si Informatica | Software Engineering
+2022-01-10 12:01:38,311 INFO serve Thread-46 : UPDATE_USER_PROFILE field interests value java, python, react
+2022-01-10 12:01:38,311 INFO serve Thread-46 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candet', 'type': None, 'faculty': 'Facultatea de Matematica si Informatica | Software Engineering', 'interests': 'java, python, react'}
+2022-01-10 12:01:38,451 INFO werkzeug Thread-46 : 127.0.0.1 - - [10/Jan/2022 12:01:38] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 12:01:46,739 INFO werkzeug Thread-47 : 127.0.0.1 - - [10/Jan/2022 12:01:46] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:01:47,007 INFO werkzeug Thread-48 : 127.0.0.1 - - [10/Jan/2022 12:01:47] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:02:01,620 INFO werkzeug Thread-49 : 127.0.0.1 - - [10/Jan/2022 12:02:01] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:02:01,941 INFO serve Thread-50 : UPDATE_USER_PROFILE field name value Andrei Candet
+2022-01-10 12:02:01,941 INFO serve Thread-50 : UPDATE_USER_PROFILE field faculty value Facultatea de Matematica si Informatica | Software Engineering
+2022-01-10 12:02:01,941 INFO serve Thread-50 : UPDATE_USER_PROFILE field interests value java, react
+2022-01-10 12:02:01,941 INFO serve Thread-50 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candet', 'type': None, 'faculty': 'Facultatea de Matematica si Informatica | Software Engineering', 'interests': 'java, react'}
+2022-01-10 12:02:02,193 INFO werkzeug Thread-50 : 127.0.0.1 - - [10/Jan/2022 12:02:02] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 12:02:04,208 INFO werkzeug Thread-51 : 127.0.0.1 - - [10/Jan/2022 12:02:04] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:03:45,955 INFO werkzeug Thread-52 : 127.0.0.1 - - [10/Jan/2022 12:03:45] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:03:46,214 INFO werkzeug Thread-53 : 127.0.0.1 - - [10/Jan/2022 12:03:46] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:03:47,023 INFO werkzeug Thread-54 : 127.0.0.1 - - [10/Jan/2022 12:03:47] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:03:52,866 INFO werkzeug Thread-55 : 127.0.0.1 - - [10/Jan/2022 12:03:52] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:03:53,136 INFO werkzeug Thread-56 : 127.0.0.1 - - [10/Jan/2022 12:03:53] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:04:54,758 INFO werkzeug Thread-58 : 127.0.0.1 - - [10/Jan/2022 12:04:54] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:04:55,026 INFO werkzeug Thread-59 : 127.0.0.1 - - [10/Jan/2022 12:04:55] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:00,428 INFO werkzeug Thread-60 : 127.0.0.1 - - [10/Jan/2022 12:05:00] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:00,747 INFO werkzeug Thread-61 : 127.0.0.1 - - [10/Jan/2022 12:05:00] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:24,410 INFO werkzeug Thread-62 : 127.0.0.1 - - [10/Jan/2022 12:05:24] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:24,719 INFO werkzeug Thread-63 : 127.0.0.1 - - [10/Jan/2022 12:05:24] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:28,855 INFO werkzeug Thread-64 : 127.0.0.1 - - [10/Jan/2022 12:05:28] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:38,183 INFO werkzeug Thread-65 : 127.0.0.1 - - [10/Jan/2022 12:05:38] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:38,448 INFO serve Thread-66 : UPDATE_USER_PROFILE field name value Andrei Candet
+2022-01-10 12:05:38,448 INFO serve Thread-66 : UPDATE_USER_PROFILE field faculty value Facultatea de Matematica si Informatica | Software Engineering
+2022-01-10 12:05:38,448 INFO serve Thread-66 : UPDATE_USER_PROFILE field interests value java, react
+2022-01-10 12:05:38,448 INFO serve Thread-66 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candet', 'type': None, 'faculty': 'Facultatea de Matematica si Informatica | Software Engineering', 'interests': 'java, react'}
+2022-01-10 12:05:38,451 INFO werkzeug Thread-66 : 127.0.0.1 - - [10/Jan/2022 12:05:38] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 12:05:47,640 INFO werkzeug Thread-67 : 127.0.0.1 - - [10/Jan/2022 12:05:47] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:05:47,951 INFO werkzeug Thread-68 : 127.0.0.1 - - [10/Jan/2022 12:05:47] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:06:09,330 INFO serve Thread-70 : Exception when decoding token Signature has expired
+2022-01-10 12:06:09,331 INFO werkzeug Thread-70 : 127.0.0.1 - - [10/Jan/2022 12:06:09] "[31m[1mGET /listings HTTP/1.1[0m" 401 -
+2022-01-10 12:06:18,047 INFO werkzeug Thread-71 : 127.0.0.1 - - [10/Jan/2022 12:06:18] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:08:13,538 INFO werkzeug Thread-72 : 127.0.0.1 - - [10/Jan/2022 12:08:13] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:08:13,811 INFO werkzeug Thread-73 : 127.0.0.1 - - [10/Jan/2022 12:08:13] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:08:40,726 INFO werkzeug Thread-74 : 127.0.0.1 - - [10/Jan/2022 12:08:40] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:08:41,036 INFO werkzeug Thread-75 : 127.0.0.1 - - [10/Jan/2022 12:08:41] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:08:49,960 INFO werkzeug Thread-76 : 127.0.0.1 - - [10/Jan/2022 12:08:49] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:08:50,269 INFO werkzeug Thread-77 : 127.0.0.1 - - [10/Jan/2022 12:08:50] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:09:07,535 INFO werkzeug Thread-78 : 127.0.0.1 - - [10/Jan/2022 12:09:07] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:09:07,856 INFO werkzeug Thread-79 : 127.0.0.1 - - [10/Jan/2022 12:09:07] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:09:24,163 INFO werkzeug Thread-80 : 127.0.0.1 - - [10/Jan/2022 12:09:24] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:09:24,481 INFO werkzeug Thread-81 : 127.0.0.1 - - [10/Jan/2022 12:09:24] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:09:35,816 INFO werkzeug Thread-82 : 127.0.0.1 - - [10/Jan/2022 12:09:35] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:09:36,133 INFO werkzeug Thread-83 : 127.0.0.1 - - [10/Jan/2022 12:09:36] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:09:40,774 INFO werkzeug Thread-84 : 127.0.0.1 - - [10/Jan/2022 12:09:40] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:09:49,404 INFO werkzeug Thread-85 : 127.0.0.1 - - [10/Jan/2022 12:09:49] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:09:49,660 INFO werkzeug Thread-86 : 127.0.0.1 - - [10/Jan/2022 12:09:49] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:10:22,961 INFO werkzeug Thread-87 : 127.0.0.1 - - [10/Jan/2022 12:10:22] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:10:23,269 INFO werkzeug Thread-88 : 127.0.0.1 - - [10/Jan/2022 12:10:23] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:15:15,486 INFO werkzeug Thread-90 : 127.0.0.1 - - [10/Jan/2022 12:15:15] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:15:15,741 INFO werkzeug Thread-91 : 127.0.0.1 - - [10/Jan/2022 12:15:15] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:06,355 INFO werkzeug Thread-93 : 127.0.0.1 - - [10/Jan/2022 12:16:06] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:06,625 INFO werkzeug Thread-94 : 127.0.0.1 - - [10/Jan/2022 12:16:06] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:13,237 INFO werkzeug Thread-95 : 127.0.0.1 - - [10/Jan/2022 12:16:13] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:13,547 INFO werkzeug Thread-96 : 127.0.0.1 - - [10/Jan/2022 12:16:13] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:16,717 INFO werkzeug Thread-97 : 127.0.0.1 - - [10/Jan/2022 12:16:16] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:21,111 INFO werkzeug Thread-98 : 127.0.0.1 - - [10/Jan/2022 12:16:21] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:21,356 INFO werkzeug Thread-99 : 127.0.0.1 - - [10/Jan/2022 12:16:21] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:37,272 INFO werkzeug Thread-100 : 127.0.0.1 - - [10/Jan/2022 12:16:37] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:16:37,582 INFO werkzeug Thread-101 : 127.0.0.1 - - [10/Jan/2022 12:16:37] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:18:54,477 INFO werkzeug Thread-103 : 127.0.0.1 - - [10/Jan/2022 12:18:54] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:18:54,716 INFO serve Thread-104 : Exception when decoding token Signature has expired
+2022-01-10 12:18:54,717 INFO werkzeug Thread-104 : 127.0.0.1 - - [10/Jan/2022 12:18:54] "[31m[1mGET /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 12:18:57,251 INFO werkzeug Thread-105 : 127.0.0.1 - - [10/Jan/2022 12:18:57] "OPTIONS /login HTTP/1.1" 200 -
+2022-01-10 12:18:57,746 INFO werkzeug Thread-106 : 127.0.0.1 - - [10/Jan/2022 12:18:57] "POST /login HTTP/1.1" 200 -
+2022-01-10 12:19:00,503 INFO werkzeug Thread-107 : 127.0.0.1 - - [10/Jan/2022 12:19:00] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:19:00,816 INFO werkzeug Thread-108 : 127.0.0.1 - - [10/Jan/2022 12:19:00] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:19:01,852 INFO werkzeug Thread-109 : 127.0.0.1 - - [10/Jan/2022 12:19:01] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:19:02,162 INFO werkzeug Thread-110 : 127.0.0.1 - - [10/Jan/2022 12:19:02] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:19:20,278 INFO werkzeug Thread-111 : 127.0.0.1 - - [10/Jan/2022 12:19:20] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:19:20,590 INFO werkzeug Thread-112 : 127.0.0.1 - - [10/Jan/2022 12:19:20] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:19:32,784 INFO werkzeug Thread-113 : 127.0.0.1 - - [10/Jan/2022 12:19:32] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:19:33,107 INFO werkzeug Thread-114 : 127.0.0.1 - - [10/Jan/2022 12:19:33] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:20:50,548 INFO werkzeug Thread-116 : 127.0.0.1 - - [10/Jan/2022 12:20:50] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:20:50,808 INFO werkzeug Thread-117 : 127.0.0.1 - - [10/Jan/2022 12:20:50] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:21:03,625 INFO werkzeug Thread-118 : 127.0.0.1 - - [10/Jan/2022 12:21:03] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:21:03,934 INFO werkzeug Thread-119 : 127.0.0.1 - - [10/Jan/2022 12:21:03] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:21:11,857 INFO werkzeug Thread-120 : 127.0.0.1 - - [10/Jan/2022 12:21:11] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:21:12,168 INFO werkzeug Thread-121 : 127.0.0.1 - - [10/Jan/2022 12:21:12] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:21:30,747 INFO werkzeug Thread-122 : 127.0.0.1 - - [10/Jan/2022 12:21:30] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:21:31,060 INFO werkzeug Thread-123 : 127.0.0.1 - - [10/Jan/2022 12:21:31] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:22:01,309 INFO werkzeug Thread-124 : 127.0.0.1 - - [10/Jan/2022 12:22:01] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:22:01,626 INFO werkzeug Thread-125 : 127.0.0.1 - - [10/Jan/2022 12:22:01] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:22:22,224 INFO werkzeug Thread-126 : 127.0.0.1 - - [10/Jan/2022 12:22:22] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:22:22,547 INFO werkzeug Thread-127 : 127.0.0.1 - - [10/Jan/2022 12:22:22] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:22:37,669 INFO werkzeug Thread-128 : 127.0.0.1 - - [10/Jan/2022 12:22:37] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:22:37,981 INFO werkzeug Thread-129 : 127.0.0.1 - - [10/Jan/2022 12:22:37] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:27:51,574 INFO werkzeug Thread-131 : 127.0.0.1 - - [10/Jan/2022 12:27:51] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:27:51,576 INFO werkzeug Thread-132 : 127.0.0.1 - - [10/Jan/2022 12:27:51] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:27:51,849 INFO werkzeug Thread-133 : 127.0.0.1 - - [10/Jan/2022 12:27:51] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:27:51,893 INFO werkzeug Thread-134 : 127.0.0.1 - - [10/Jan/2022 12:27:51] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:05,103 INFO werkzeug Thread-136 : 127.0.0.1 - - [10/Jan/2022 12:29:05] "OPTIONS /login HTTP/1.1" 200 -
+2022-01-10 12:29:05,556 INFO werkzeug Thread-137 : 127.0.0.1 - - [10/Jan/2022 12:29:05] "POST /login HTTP/1.1" 200 -
+2022-01-10 12:29:08,083 INFO werkzeug Thread-138 : 127.0.0.1 - - [10/Jan/2022 12:29:08] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:29:08,403 INFO werkzeug Thread-139 : 127.0.0.1 - - [10/Jan/2022 12:29:08] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:29:09,632 INFO werkzeug Thread-140 : 127.0.0.1 - - [10/Jan/2022 12:29:09] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:09,948 INFO werkzeug Thread-141 : 127.0.0.1 - - [10/Jan/2022 12:29:09] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:29:09,952 INFO werkzeug Thread-142 : 127.0.0.1 - - [10/Jan/2022 12:29:09] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:10,265 INFO werkzeug Thread-143 : 127.0.0.1 - - [10/Jan/2022 12:29:10] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:29:27,949 INFO werkzeug Thread-144 : 127.0.0.1 - - [10/Jan/2022 12:29:27] "OPTIONS /listings HTTP/1.1" 200 -
+2022-01-10 12:29:28,207 INFO werkzeug Thread-145 : 127.0.0.1 - - [10/Jan/2022 12:29:28] "GET /listings HTTP/1.1" 200 -
+2022-01-10 12:29:29,142 INFO werkzeug Thread-146 : 127.0.0.1 - - [10/Jan/2022 12:29:29] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:29,453 INFO werkzeug Thread-147 : 127.0.0.1 - - [10/Jan/2022 12:29:29] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:29:29,460 INFO werkzeug Thread-148 : 127.0.0.1 - - [10/Jan/2022 12:29:29] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:29,768 INFO werkzeug Thread-149 : 127.0.0.1 - - [10/Jan/2022 12:29:29] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:29:49,794 INFO werkzeug Thread-150 : 127.0.0.1 - - [10/Jan/2022 12:29:49] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:49,797 INFO werkzeug Thread-151 : 127.0.0.1 - - [10/Jan/2022 12:29:49] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:29:50,054 INFO werkzeug Thread-152 : 127.0.0.1 - - [10/Jan/2022 12:29:50] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:50,117 INFO werkzeug Thread-153 : 127.0.0.1 - - [10/Jan/2022 12:29:50] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:29:57,542 INFO werkzeug Thread-154 : 127.0.0.1 - - [10/Jan/2022 12:29:57] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:57,853 INFO werkzeug Thread-155 : 127.0.0.1 - - [10/Jan/2022 12:29:57] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:29:57,857 INFO werkzeug Thread-156 : 127.0.0.1 - - [10/Jan/2022 12:29:57] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:29:58,176 INFO werkzeug Thread-157 : 127.0.0.1 - - [10/Jan/2022 12:29:58] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:04,470 INFO werkzeug Thread-158 : 127.0.0.1 - - [10/Jan/2022 12:30:04] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:04,472 INFO werkzeug Thread-159 : 127.0.0.1 - - [10/Jan/2022 12:30:04] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:04,725 INFO werkzeug Thread-160 : 127.0.0.1 - - [10/Jan/2022 12:30:04] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:04,789 INFO werkzeug Thread-161 : 127.0.0.1 - - [10/Jan/2022 12:30:04] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:23,626 INFO werkzeug Thread-162 : 127.0.0.1 - - [10/Jan/2022 12:30:23] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:23,939 INFO werkzeug Thread-163 : 127.0.0.1 - - [10/Jan/2022 12:30:23] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:23,974 INFO werkzeug Thread-164 : 127.0.0.1 - - [10/Jan/2022 12:30:23] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:24,258 INFO werkzeug Thread-165 : 127.0.0.1 - - [10/Jan/2022 12:30:24] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:47,969 INFO werkzeug Thread-166 : 127.0.0.1 - - [10/Jan/2022 12:30:47] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:47,972 INFO werkzeug Thread-167 : 127.0.0.1 - - [10/Jan/2022 12:30:47] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:48,226 INFO werkzeug Thread-168 : 127.0.0.1 - - [10/Jan/2022 12:30:48] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:48,290 INFO werkzeug Thread-169 : 127.0.0.1 - - [10/Jan/2022 12:30:48] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:54,079 INFO werkzeug Thread-170 : 127.0.0.1 - - [10/Jan/2022 12:30:54] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:54,387 INFO werkzeug Thread-171 : 127.0.0.1 - - [10/Jan/2022 12:30:54] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:30:54,394 INFO werkzeug Thread-172 : 127.0.0.1 - - [10/Jan/2022 12:30:54] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:30:54,706 INFO werkzeug Thread-173 : 127.0.0.1 - - [10/Jan/2022 12:30:54] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:31:30,041 INFO werkzeug Thread-174 : 127.0.0.1 - - [10/Jan/2022 12:31:30] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:31:30,043 INFO werkzeug Thread-175 : 127.0.0.1 - - [10/Jan/2022 12:31:30] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:31:30,300 INFO werkzeug Thread-176 : 127.0.0.1 - - [10/Jan/2022 12:31:30] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:31:30,364 INFO werkzeug Thread-177 : 127.0.0.1 - - [10/Jan/2022 12:31:30] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:31:39,289 INFO werkzeug Thread-178 : 127.0.0.1 - - [10/Jan/2022 12:31:39] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:31:39,604 INFO werkzeug Thread-179 : 127.0.0.1 - - [10/Jan/2022 12:31:39] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:31:39,611 INFO werkzeug Thread-180 : 127.0.0.1 - - [10/Jan/2022 12:31:39] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:31:39,922 INFO werkzeug Thread-181 : 127.0.0.1 - - [10/Jan/2022 12:31:39] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:32:02,213 INFO werkzeug Thread-182 : 127.0.0.1 - - [10/Jan/2022 12:32:02] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:32:02,215 INFO werkzeug Thread-183 : 127.0.0.1 - - [10/Jan/2022 12:32:02] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:32:02,467 INFO werkzeug Thread-184 : 127.0.0.1 - - [10/Jan/2022 12:32:02] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:32:02,530 INFO werkzeug Thread-185 : 127.0.0.1 - - [10/Jan/2022 12:32:02] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:32:35,784 INFO werkzeug Thread-186 : 127.0.0.1 - - [10/Jan/2022 12:32:35] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:32:36,096 INFO werkzeug Thread-187 : 127.0.0.1 - - [10/Jan/2022 12:32:36] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:32:36,101 INFO werkzeug Thread-188 : 127.0.0.1 - - [10/Jan/2022 12:32:36] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:32:36,410 INFO werkzeug Thread-189 : 127.0.0.1 - - [10/Jan/2022 12:32:36] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:32:56,890 INFO werkzeug Thread-190 : 127.0.0.1 - - [10/Jan/2022 12:32:56] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:32:56,892 INFO werkzeug Thread-191 : 127.0.0.1 - - [10/Jan/2022 12:32:56] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:32:57,148 INFO werkzeug Thread-192 : 127.0.0.1 - - [10/Jan/2022 12:32:57] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:32:57,211 INFO werkzeug Thread-193 : 127.0.0.1 - - [10/Jan/2022 12:32:57] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:34:33,765 INFO werkzeug Thread-195 : 127.0.0.1 - - [10/Jan/2022 12:34:33] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:34:33,768 INFO werkzeug Thread-196 : 127.0.0.1 - - [10/Jan/2022 12:34:33] "OPTIONS /listing/undefined HTTP/1.1" 200 -
+2022-01-10 12:34:34,022 INFO werkzeug Thread-197 : 127.0.0.1 - - [10/Jan/2022 12:34:34] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:34:34,085 ERROR serve Thread-198 : Error when getting listing undefined.
+'NoneType' object has no attribute 'public_id'
+2022-01-10 12:34:34,086 INFO werkzeug Thread-198 : 127.0.0.1 - - [10/Jan/2022 12:34:34] "[31m[1mGET /listing/undefined HTTP/1.1[0m" 400 -
+2022-01-10 12:34:54,167 INFO werkzeug Thread-200 : 127.0.0.1 - - [10/Jan/2022 12:34:54] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:34:54,170 INFO werkzeug Thread-201 : 127.0.0.1 - - [10/Jan/2022 12:34:54] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:34:54,439 INFO werkzeug Thread-202 : 127.0.0.1 - - [10/Jan/2022 12:34:54] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:34:54,488 INFO werkzeug Thread-203 : 127.0.0.1 - - [10/Jan/2022 12:34:54] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:35:22,224 INFO werkzeug Thread-205 : 127.0.0.1 - - [10/Jan/2022 12:35:22] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:35:22,227 INFO werkzeug Thread-206 : 127.0.0.1 - - [10/Jan/2022 12:35:22] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:35:22,482 INFO werkzeug Thread-207 : 127.0.0.1 - - [10/Jan/2022 12:35:22] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:35:22,544 INFO werkzeug Thread-208 : 127.0.0.1 - - [10/Jan/2022 12:35:22] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:35:28,620 INFO werkzeug Thread-209 : 127.0.0.1 - - [10/Jan/2022 12:35:28] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:35:28,922 INFO werkzeug Thread-210 : 127.0.0.1 - - [10/Jan/2022 12:35:28] "OPTIONS /listing/undefined HTTP/1.1" 200 -
+2022-01-10 12:35:28,929 INFO werkzeug Thread-211 : 127.0.0.1 - - [10/Jan/2022 12:35:28] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:35:29,235 ERROR serve Thread-212 : Error when getting listing undefined.
+'NoneType' object has no attribute 'public_id'
+2022-01-10 12:35:29,236 INFO werkzeug Thread-212 : 127.0.0.1 - - [10/Jan/2022 12:35:29] "[31m[1mGET /listing/undefined HTTP/1.1[0m" 400 -
+2022-01-10 12:35:34,459 INFO werkzeug Thread-213 : 127.0.0.1 - - [10/Jan/2022 12:35:34] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 12:35:34,461 INFO werkzeug Thread-214 : 127.0.0.1 - - [10/Jan/2022 12:35:34] "OPTIONS /listing/undefined HTTP/1.1" 200 -
+2022-01-10 12:35:34,722 INFO werkzeug Thread-215 : 127.0.0.1 - - [10/Jan/2022 12:35:34] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:35:34,775 ERROR serve Thread-216 : Error when getting listing undefined.
+'NoneType' object has no attribute 'public_id'
+2022-01-10 12:35:34,776 INFO werkzeug Thread-216 : 127.0.0.1 - - [10/Jan/2022 12:35:34] "[31m[1mGET /listing/undefined HTTP/1.1[0m" 400 -
+2022-01-10 12:35:38,704 INFO werkzeug Thread-217 : 127.0.0.1 - - [10/Jan/2022 12:35:38] "GET /user/profile HTTP/1.1" 200 -
+2022-01-10 12:35:39,004 INFO werkzeug Thread-218 : 127.0.0.1 - - [10/Jan/2022 12:35:39] "OPTIONS /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 12:35:39,325 INFO werkzeug Thread-219 : 127.0.0.1 - - [10/Jan/2022 12:35:39] "GET /listing/0d9a32e7-dedd-42fd-a949-57a0664117d9 HTTP/1.1" 200 -
+2022-01-10 13:27:24,872 INFO werkzeug MainThread :  * Detected change in 'E:\\Andrei\\Facultate\\master\\re\\student_internship_platform\\backend\\domain\\Application.py', reloading
+2022-01-10 13:27:25,037 INFO werkzeug MainThread :  * Restarting with stat
+2022-01-10 13:27:27,566 WARNING werkzeug MainThread :  * Debugger is active!
+2022-01-10 13:27:27,591 INFO werkzeug MainThread :  * Debugger PIN: 132-647-804
+2022-01-10 13:27:27,660 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:50321/ (Press CTRL+C to quit)
+2022-01-10 13:27:28,984 INFO werkzeug Thread-2 : 127.0.0.1 - - [10/Jan/2022 13:27:28] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 13:27:28,988 INFO werkzeug Thread-3 : 127.0.0.1 - - [10/Jan/2022 13:27:28] "OPTIONS /listing/undefined HTTP/1.1" 200 -
+2022-01-10 13:27:29,235 INFO serve Thread-4 : Exception when decoding token Signature has expired
+2022-01-10 13:27:29,236 INFO werkzeug Thread-4 : 127.0.0.1 - - [10/Jan/2022 13:27:29] "[31m[1mGET /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 13:27:29,311 INFO serve Thread-6 : Exception when decoding token Signature has expired
+2022-01-10 13:27:29,312 INFO werkzeug Thread-6 : 127.0.0.1 - - [10/Jan/2022 13:27:29] "[31m[1mGET /listing/undefined HTTP/1.1[0m" 401 -
