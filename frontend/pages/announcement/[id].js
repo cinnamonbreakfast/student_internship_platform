@@ -166,10 +166,22 @@ const AnnouncementView = () => {
                 <div className={styles.section}>
                     <h4>Candidates</h4>
 
-                    <Candidate />
-                    <Candidate />
-                    <Candidate />
-                    <Candidate />
+                    <Candidate
+                        name={'Mr. Student Stud'}
+                        email={'studentstud@t.c'}
+                        faculty={'UBB Facultatea de Matematica si Informatica'}
+                        motivation={
+                            "andomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined ch"
+                        }
+                    />
+                    <Candidate
+                        name={'John Doe'}
+                        email={'john@t.c'}
+                        faculty={'UB | Info'}
+                        motivation={
+                            'e the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheet'
+                        }
+                    />
                 </div>
             )}
         </div>
