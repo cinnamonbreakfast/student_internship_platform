@@ -27,7 +27,7 @@ const Listing = () => {
 
             <div className={styles.list}>
                 {posts?.map((post) => (
-                    <Card {...post} />
+                    <Card {...post} key={post.id} />
                 ))}
             </div>
         </div>
