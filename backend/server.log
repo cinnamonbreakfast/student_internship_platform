@@ -1,0 +1,44 @@
+2022-01-10 10:44:27,247 ERROR serve Thread-9 : Error when adding new listing.
+'title'
+2022-01-10 10:44:27,247 INFO werkzeug Thread-9 : 127.0.0.1 - - [10/Jan/2022 10:44:27] "[31m[1mPOST /listings/new HTTP/1.1[0m" 400 -
+2022-01-10 10:44:42,219 ERROR serve Thread-10 : Error when adding new listing.
+'title'
+2022-01-10 10:44:42,219 INFO werkzeug Thread-10 : 127.0.0.1 - - [10/Jan/2022 10:44:42] "[31m[1mPOST /listings/new HTTP/1.1[0m" 400 -
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field name value Andrei Candet
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field type value recruiter
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field faculty value Babes
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE field interests value a, b, c
+2022-01-10 10:45:00,773 INFO serve Thread-11 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candet', 'type': 'recruiter', 'faculty': 'Babes', 'interests': 'a, b, c'}
+2022-01-10 10:45:01,000 INFO werkzeug Thread-11 : 127.0.0.1 - - [10/Jan/2022 10:45:01] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 11:15:45,807 INFO werkzeug Thread-12 : 127.0.0.1 - - [10/Jan/2022 11:15:45] "[31m[1mPUT /user/profile HTTP/1.1[0m" 405 -
+2022-01-10 11:44:44,704 INFO werkzeug Thread-13 : 127.0.0.1 - - [10/Jan/2022 11:44:44] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:44:44,944 INFO werkzeug Thread-14 : 127.0.0.1 - - [10/Jan/2022 11:44:44] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:44:57,568 INFO werkzeug Thread-15 : 127.0.0.1 - - [10/Jan/2022 11:44:57] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:44:57,872 INFO werkzeug Thread-16 : 127.0.0.1 - - [10/Jan/2022 11:44:57] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:45:09,791 INFO werkzeug Thread-17 : 127.0.0.1 - - [10/Jan/2022 11:45:09] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:45:10,109 INFO werkzeug Thread-18 : 127.0.0.1 - - [10/Jan/2022 11:45:10] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:46:44,758 INFO werkzeug Thread-20 : 127.0.0.1 - - [10/Jan/2022 11:46:44] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:46:45,022 INFO serve Thread-21 : Exception when decoding token Signature has expired
+2022-01-10 11:46:45,022 INFO werkzeug Thread-21 : 127.0.0.1 - - [10/Jan/2022 11:46:45] "[31m[1mPOST /user/profile HTTP/1.1[0m" 401 -
+2022-01-10 11:46:59,204 INFO werkzeug Thread-22 : 127.0.0.1 - - [10/Jan/2022 11:46:59] "OPTIONS /login HTTP/1.1" 200 -
+2022-01-10 11:46:59,722 INFO werkzeug Thread-23 : 127.0.0.1 - - [10/Jan/2022 11:46:59] "POST /login HTTP/1.1" 200 -
+2022-01-10 11:47:08,803 INFO werkzeug Thread-24 : 127.0.0.1 - - [10/Jan/2022 11:47:08] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:47:09,113 ERROR serve Thread-25 : Error when updating user profile.
+'email'
+2022-01-10 11:47:09,114 INFO werkzeug Thread-25 : 127.0.0.1 - - [10/Jan/2022 11:47:09] "[31m[1mPOST /user/profile HTTP/1.1[0m" 400 -
+2022-01-10 11:48:24,655 INFO werkzeug Thread-27 : 127.0.0.1 - - [10/Jan/2022 11:48:24] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:48:24,921 ERROR serve Thread-28 : Error when updating user profile.
+'email'
+2022-01-10 11:48:24,922 INFO werkzeug Thread-28 : 127.0.0.1 - - [10/Jan/2022 11:48:24] "[31m[1mPOST /user/profile HTTP/1.1[0m" 400 -
+2022-01-10 11:48:42,356 INFO werkzeug Thread-29 : 127.0.0.1 - - [10/Jan/2022 11:48:42] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE field name value Andrei Candetdad
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE field faculty value dasdadda
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE field interests value 
+2022-01-10 11:48:42,668 INFO serve Thread-30 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candetdad', 'type': None, 'faculty': 'dasdadda', 'interests': ''}
+2022-01-10 11:48:42,790 INFO werkzeug Thread-30 : 127.0.0.1 - - [10/Jan/2022 11:48:42] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -
+2022-01-10 11:48:51,332 INFO werkzeug Thread-31 : 127.0.0.1 - - [10/Jan/2022 11:48:51] "OPTIONS /user/profile HTTP/1.1" 200 -
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE field name value Andrei Candetdad
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE field faculty value dasdadda
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE field interests value 
+2022-01-10 11:48:51,645 INFO serve Thread-32 : UPDATE_USER_PROFILE updating user with {'name': 'Andrei Candetdad', 'type': None, 'faculty': 'dasdadda', 'interests': ''}
+2022-01-10 11:48:51,647 INFO werkzeug Thread-32 : 127.0.0.1 - - [10/Jan/2022 11:48:51] "[35m[1mPOST /user/profile HTTP/1.1[0m" 204 -

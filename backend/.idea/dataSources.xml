@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="DatabaseRE" uuid="cfc126f3-d3e0-4724-b1c1-a7fe43e25b8a">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:E:\Andrei\Facultate\master\re\student_internship_platform\backend\DatabaseRE.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
