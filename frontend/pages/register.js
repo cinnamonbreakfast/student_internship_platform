@@ -3,6 +3,7 @@ import { Input, Button, Toggle, Message, toaster, Form } from 'rsuite';
 import styles from '../styles/Register.module.css';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { useStorage } from '../scripts/useStorage';
 
 const Register = () => {
     const router = useRouter();
@@ -12,6 +13,9 @@ const Register = () => {
 
     const action = (event) => {
         event.preventDefault();
+
+        const storage = window.localStorage;
+
         axios({
             method: 'POST',
             url: `${process.env.NEXT_PUBLIC_BACKEND}/register`,
@@ -28,11 +32,9 @@ const Register = () => {
                     </Message>
                 );
                 toaster.push(message);
-                router.push({
-                    pathname: '/',
-                });
             })
             .catch((err) => {
+                console.log(err);
                 const message = (
                     <Message type='error'>
                         {err?.response?.data?.error ||
@@ -72,8 +74,11 @@ const Register = () => {
                 </Button>
             </form>
             <h5>
-                Already have an account ? Click <a href='/login'>here</a> to
-                login.
+                Already have an account ? Click{' '}
+                <Link href='/login'>
+                    <a>here</a>
+                </Link>{' '}
+                to login.
             </h5>
         </div>
     );

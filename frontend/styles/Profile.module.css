@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    padding: 0px 5%;
+}
+
+.container input {
+    margin-bottom: 10px;
+}
+
+.tag_add_btn {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.tags {
+    display: flex;
+    align-items: flex-start;
+}
+
+.tags input[type='text'] {
+    margin-top: 10px;
+    margin-left: 10px;
+}

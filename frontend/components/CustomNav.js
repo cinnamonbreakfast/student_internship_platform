@@ -1,9 +1,11 @@
 import { Nav, Navbar } from 'rsuite';
 import styles from '../styles/Nav.module.css';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const CustomNav = ({ active, ...props }) => {
     const router = useRouter();
+    const [user, setUser] = useState();
 
     const onSelect = (data) => {
         console.log(data);
@@ -12,16 +14,36 @@ const CustomNav = ({ active, ...props }) => {
         });
     };
 
+    useEffect(() => {
+        const storage = window.localStorage;
+        const userData = JSON.parse(storage.getItem('user') || null);
+        if (userData) {
+            setUser(userData);
+        } else {
+            setUser(userData);
+        }
+    }, [router.pathname]);
+
+    console.log(user);
+
     return (
         <Navbar {...props} style={styles}>
-            <Nav.Item onSelect={onSelect} eventKey='announcements'>
+            <Nav.Item onSelect={onSelect} eventKey='announcement'>
                 Internships
             </Nav.Item>
 
-            <Nav pullRight onSelect={onSelect}>
-                <Nav.Item eventKey='login'>Login</Nav.Item>
-                <Nav.Item eventKey='register'>Register</Nav.Item>
-            </Nav>
+            {user ? (
+                <Nav pullRight>
+                    <Nav.Item onSelect={onSelect} eventKey='profile'>
+                        Welcome, {user.name || user.email}
+                    </Nav.Item>
+                </Nav>
+            ) : (
+                <Nav pullRight onSelect={onSelect}>
+                    <Nav.Item eventKey='login'>Login</Nav.Item>
+                    <Nav.Item eventKey='register'>Register</Nav.Item>
+                </Nav>
+            )}
         </Navbar>
     );
 };
