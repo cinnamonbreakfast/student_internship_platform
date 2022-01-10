@@ -4,6 +4,7 @@ import styles from '../styles/Register.module.css';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useStorage } from '../scripts/useStorage';
+import Link from 'next/link';
 
 const Register = () => {
     const router = useRouter();
