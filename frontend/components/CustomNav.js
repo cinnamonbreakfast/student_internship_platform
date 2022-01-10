@@ -26,7 +26,7 @@ const CustomNav = ({ active, ...props }) => {
     console.log(user);
 
     return (
-        <Navbar {...props} style={styles}>
+        <Navbar {...props}>
             <Nav.Item onSelect={onSelect} eventKey='announcement'>
                 Internships
             </Nav.Item>
